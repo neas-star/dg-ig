@@ -1,27 +1,23 @@
 <!--
-  Schritt 7: Startseite eures IG
-  Ersetzt die TODOs durch eigenen Text. Markdown ist erlaubt.
-  Diese Seite ist die erste, die man auf GitHub Pages sieht.
+  Schritt 7: Startseite des Implementation Guides
 -->
 
 ### Use Case
 
-TODO: Beschreibt in zwei bis drei Sätzen, welche Situation euer IG abbildet.
-Wer erfasst die Daten, wer liest sie, und wofür werden sie gebraucht?
+Dieser Implementation Guide beschreibt die strukturierte Erfassung von Arzneimittelallergien in einer Hausarztpraxis. Eine Ärztin oder ein Arzt dokumentiert die Allergie einer Patientin oder eines Patienten anhand standardisierter FHIR-Daten. Die Notfallstation kann diese Informationen nutzen, um bekannte Allergien bei der Behandlung zu berücksichtigen und unerwünschte Arzneimittelreaktionen zu vermeiden.
 
 ### Scope
 
-TODO: Was deckt dieses IG ab, und was bewusst nicht?
+Dieses IG basiert auf CH Core und erweitert das bestehende Profil AllergyIntolerance für die Dokumentation von Arzneimittelallergien.
+
+Es definiert Anforderungen an den klinischen Status, die verwendeten Allergiecodes, die Kritikalität, den Beginn der Allergie, die erfassende Person und mögliche Reaktionen.
+
+Andere Allergiearten, beispielsweise Lebensmittel- oder Umweltallergien, sind nicht Bestandteil dieses IG.
 
 ### Artefakte
 
-TODO: Ergänzt pro Artefakt einen Satz, wofür es da ist.
-
-* [DG Arzneimittelallergie](StructureDefinition-dg-medication-allergy.html): TODO
-* [Titel eures Beispiels](AllergyIntolerance-TODO_Name.html): TODO
-
-<!-- TODO_Name ist der Name hinter "Instance:" in beispiele.fsh,
-     z. B. AllergyIntolerance-PenicillinAllergieAnna.html -->
+* [DG Arzneimittelallergie](StructureDefinition-dg-medication-allergy.html): FHIR-Profil zur standardisierten Erfassung von Arzneimittelallergien mit definierten Pflichtfeldern, Codes und Validierungsregeln.
+* [Penicillinallergie bei Anna Muster](AllergyIntolerance-PenicillinAllergieAnna.html): Beispiel einer bestätigten Penicillinallergie mit hoher Kritikalität und dokumentierter Reaktion (Urtikaria).
 
 ### Abhängigkeiten
 
@@ -29,6 +25,6 @@ Dieses IG baut auf [CH Core 6.0.0](https://fhir.ch/ig/ch-core/6.0.0/) auf.
 
 ### Autorin oder Autor
 
-TODO: Euer Name.
+Enea Stähelin
 
 <p style="font-size:smaller">Erstellt im Lab des Moduls Data Standards in Healthcare, ZHAW, HS26. Kein offizieller Standard.</p>
