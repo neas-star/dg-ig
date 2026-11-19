@@ -38,33 +38,32 @@ Id: dg-medication-allergy
 Title: "DG Arzneimittelallergie"
 Description: "Arzneimittelallergie, wie sie in der Hausarztpraxis erfasst und auf der Notfallstation gelesen wird."
 
+// Anforderung 1: nur Allergien gegen Arzneimittel
+* category 1..*
+* category = #medication
 
- // Anforderung 1: nur Allergien gegen Arzneimittel
- * category 1..*
- * category = #medication
+// Anforderung 2: klinischer Status
+* clinicalStatus 1..1
 
- // Anforderung 2: klinischer Status
- * clinicalStatus 1..1
+// Anforderung 3: Codes aus der Schweizer Allergieliste
+* code 1..1
+* code from $ch-allergy-vs (extensible)
 
- // Anforderung 3: Codes aus der Schweizer Allergieliste
- * code 1..1
- * code from $ch-allergy-vs (extensible)
+// Anforderung 4: Kritikalität
+* criticality 1..1
+* criticality MS
 
- // Anforderung 4: Kritikalität
- * criticality 1..1
- * criticality MS
+// Anforderung 5: Beginn der Allergie
+* onset[x] only dateTime or Age
+* onset[x] MS
 
- // Anforderung 5: Beginn der Allergie
- * onset[x] only dateTime or Age
- * onset[x] MS
+// Anforderung 6: wer die Allergie erfasst hat
+* recorder 1..1
+* recorder only Reference(CHCorePractitioner)
 
- // Anforderung 6: wer die Allergie erfasst hat
- * recorder 1..1
- * recorder only Reference(CHCorePractitioner)
+// Anforderung 7: Reaktionen
+* reaction MS
+* reaction.manifestation from $ch-allergy-manifestation-vs (extensible)
 
- // Anforderung 7: Reaktionen
- * reaction MS
- * reaction.manifestation from $ch-allergy-manifestation-vs (extensible)
-
- // Invariante: bestätigte Allergien benötigen eine Reaktion
- * obeys dg-allergy-1
+// Invariante: bestätigte Allergien benötigen eine Reaktion
+* obeys dg-allergy-1
